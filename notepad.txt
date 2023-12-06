@@ -31,8 +31,8 @@ VALUES (
 7-SELECT * FROM Customers WHERE CustomerName LIKE '%son%';
 
 8-SELECT * FROM orders
-WHERE EXTRACT(MONTH FROM orderdate) = 10
-AND EXTRACT(YEAR FROM orderdate) = 1996
+WHERE orderdate BETWEEN ="1/10/1996"
+AND "1/11/1996
 ORDER BY orderdate ASC;
 
 9-SELECT shipperid, COUNT(*) AS total_orders_shipped
