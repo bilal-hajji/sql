@@ -40,4 +40,4 @@ FROM orders
 GROUP BY shipperid;
 
 10-SELECT * FROM products
-WHERE 'Unit,price >25';
+WHERE 'price >25';
