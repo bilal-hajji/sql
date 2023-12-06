@@ -1,4 +1,4 @@
-1-INSERT INTO Cusomers('CustomerID','CustomerName','ContactName','Address','City','PostalCode','Country')
+1-INSERT INTO Cusomers(CustomerID,CustomerName,ContactName,Address,City,PostalCode,Country)
 VALUES ('90','Bilal','Abdille','Kimathi str.22','nairobi','101','kenya')
 SELECT * FROM Customers WHERE CustomerName = 'Juma';
 UPDATE Customers
