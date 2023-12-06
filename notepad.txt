@@ -1,0 +1,43 @@
+1-INSERT INTO Cusomers('CustomerID','CustomerName','ContactName','Address','City','PostalCode','Country')
+VALUES ('90','Bilal','Abdille','Kimathi str.22','nairobi','101','kenya')
+SELECT * FROM Customers WHERE CustomerName = 'Juma';
+UPDATE Customers
+SET CustomerName = 'Bon app' 
+WHERE CustomerName = 'Bilal';
+
+2-INSERT INTO orders (customerid, employeeid, orderdate, shipperid)
+VALUES (
+  (SELECT customer_id FROM customers WHERE customer_name = 'CustomerName'),
+  'EmployeeID',
+  'OrderDate',
+  'ShipperID'
+);
+
+3-INSERT INTO products (productname, supplierid, categoryid, unit,price)
+VALUES ('NewProduct', 'ExistingSupplierID', 'ExistingCategoryID', 'Unit','Price');
+
+4-INSERT INTO orderdetails (orderid, productid, quantity, unit,price)
+VALUES (
+  (SELECT orderid FROM orders WHERE customerid = (SELECT customer_id FROM customers WHERE customername = 'Juma')),
+  (SELECT productid FROM products WHERE productname = 'Omo'),
+  'Quantity',
+  'Unit','Price'
+);
+
+5-SELECT * FROM Customers WHERE CustomerID = 56;
+
+6-SELECT * FROM Customers WHERE Country IN ('Brazil','Italy');
+
+7-SELECT * FROM Customers WHERE CustomerName LIKE '%son%';
+
+8-SELECT * FROM orders
+WHERE EXTRACT(MONTH FROM orderdate) = 10
+AND EXTRACT(YEAR FROM orderdate) = 1996
+ORDER BY orderdate ASC;
+
+9-SELECT shipperid, COUNT(*) AS total_orders_shipped
+FROM orders
+GROUP BY shipperid;
+
+10-SELECT * FROM products
+WHERE 'Unit,price >25';
